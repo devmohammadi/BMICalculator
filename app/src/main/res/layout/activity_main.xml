@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:padding="3dp"
+    tools:context=".controller.activitys.MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/title"
+        android:layout_marginTop="16dp"
+        android:text="@string/bmi_calculator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.301"
+        app:layout_constraintStart_toEndOf="@+id/btn_history"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_history"
+        style="@style/title"
+        android:onClick="historyOnclick"
+        android:layout_width="39dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_recent_history" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="@style/marginLayoutGender"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+
+        <ToggleButton
+            android:id="@+id/btn_male"
+            style="@style/toggleButton"
+            android:onClick="male"
+            android:text="@string/male"
+            android:textOff="@string/male"
+            android:textOn="@string/male" />
+
+        <ToggleButton
+            android:id="@+id/btn_female"
+            style="@style/toggleButton"
+            android:onClick="female"
+            android:text="@string/female"
+            android:textOff="@string/female"
+            android:textOn="@string/female" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        style="@style/backLayout"
+        android:layout_width="367dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/textView"
+                android:text="@string/height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+            <EditText
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/EnterName"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                style="@style/layoutInner"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+                <TextView
+                    android:id="@+id/tv_height"
+                    style="@style/textView"
+                    android:text="@string/kg_150"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/textView"
+                    android:text="@string/centimetr" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                style="@style/layoutInner"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                app:layout_constraintVertical_bias="0.0">
+
+                <Button
+                    android:id="@+id/btn_height_plus"
+                    style="@style/buttonStyle"
+                    android:onClick="add"
+                    android:text="@string/plus" />
+
+                <Button
+                    android:id="@+id/btn_height_min"
+                    style="@style/buttonStyle"
+                    android:layout_marginEnd="0dp"
+                    android:onClick="min"
+                    android:text="@string/min" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView5"
+                style="@style/textView"
+                android:layout_weight="0"
+                android:text="@string/weight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                <TextView
+                    android:id="@+id/tv_weight"
+                    style="@style/textView"
+                    android:layout_weight="1"
+                    android:text="@string/weight_50" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    style="@style/textView"
+                    android:layout_weight="1"
+                    android:text="@string/kg" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_weight_plus"
+                    style="@style/buttonStyle"
+                    android:layout_weight="1"
+                    android:onClick="add"
+                    android:text="@string/plus" />
+
+                <Button
+                    android:id="@+id/btn_weight_min"
+                    style="@style/buttonStyle"
+                    android:layout_marginEnd="0dp"
+                    android:layout_weight="1"
+                    android:onClick="min"
+                    android:text="@string/min" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_bmi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_bmi"
+        android:onClick="button_bmi"
+        android:text="@string/Calculate"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

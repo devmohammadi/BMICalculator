@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">BMICalculator</string>
+    <string name="img_description">description</string>
+    <string name="bmi_calculator">شـــاخص تــــوده بــــدنی</string>
+    <string name="bmi_history">تاریخچه شـــاخص تــــوده بــــدنی</string>
+    <string name="male">آقـــــا</string>
+    <string name="female">خانم</string>
+    <string name="height">قد</string>
+    <string name="centimetr">سانتی متر</string>
+    <string name="plus">+</string>
+    <string name="min">-</string>
+    <string name="Calculate">محاسبه</string>
+    <string name="weight">وزن</string>
+    <string name="kg">کیلوگرم</string>
+    <string name="age">سن</string>
+    <string name="weight_50">50</string>
+    <string name="kg_150">150</string>
+    <string name="age_20">20</string>
+    <string name="todo">TODO</string>
+    <string name="EnterName">نام خود را وارد کنید</string>
+</resources>
